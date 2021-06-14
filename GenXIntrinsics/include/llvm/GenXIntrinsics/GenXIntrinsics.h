@@ -232,9 +232,13 @@ static inline bool isAnyNonTrivialIntrinsic(const Value *V) {
   return isAnyNonTrivialIntrinsic(getAnyIntrinsicID(V));
 }
 
+#if 0
+// Disabled temporarily as this is not compatible with
+// https://reviews.llvm.org/D99173.
 /// GenXIntrinsic::getAnyName(ID) - Return the LLVM name for LLVM or GenX
 /// intrinsic, such as "llvm.genx.lane.id".
 std::string getAnyName(unsigned id, ArrayRef<Type *> Tys = None);
+#endif
 
 /// GenXIntrinsic::getAnyType(ID) - Return the function type for an intrinsic.
 static inline FunctionType *getAnyType(LLVMContext &Context, unsigned id,
